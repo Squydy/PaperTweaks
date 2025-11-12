@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
 
 concurrency:
   group: build-${{ github.sha }}
@@ -35,3 +36,8 @@ jobs:
             PaperTweaks.jar
             PaperTweaks.jar.sha256
             LICENSE
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PaperTweaks
+          path: target/*.jar
