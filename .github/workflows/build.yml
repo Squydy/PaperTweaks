@@ -26,7 +26,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v5
 
       - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v3
+        uses: gradle/actions/wrapper-validation@v5
 
       - name: Build artifacts
         run: ./gradlew build --no-daemon --stacktrace
